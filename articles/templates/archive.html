@@ -1,20 +1,24 @@
+
 <!DOCTYPE html>
 <html>
 <head>
     <title>Архив статей</title>
     <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/article.css' %}">
 </head>
-<body>
+<body class="archive">
     <div class="header">
-        <img src="https://www.djangoproject.com/m/img/logos/django-logo-negative.png" 
-             style="height: 60px; margin-bottom: 10px;">
+        <img src="https://www.djangoproject.com/m/img/logos/django-logo-negative.png" alt="Django">
         <h1>Архив статей</h1>
     </div>
     
     <div class="archive">
         {% for post in posts %}
         <div class="one-post">
-            <h2 class="post-title">{{ post.title }}</h2>
+            <h2 class="post-title">
+                <a href="{% url 'get_article' post.id %}">{{ post.title }}</a>
+            </h2>
             <div class="article-info">
                 <div class="article-author">{{ post.author.username }}</div>
                 <div class="article-created-date">{{ post.created_date }}</div>
@@ -22,14 +26,8 @@
             <p class="article-text">{{ post.get_excerpt }}</p>
         </div>
         {% empty %}
-        <div class="one-post">
-            <p>Статей пока нет. Создайте первую статью через админку.</p>
-        </div>
+        <p>Статей пока нет.</p>
         {% endfor %}
-    </div>
-    
-    <div class="footer">
-        <p>Всего статей: {{ posts|length }}</p>
     </div>
 </body>
 </html>

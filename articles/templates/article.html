@@ -1,0 +1,29 @@
+<!-- articles/templates/article.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ post.title }}</title>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/article.css' %}">
+</head>
+<body class="article">
+    <div class="header">
+        <img src="https://www.djangoproject.com/m/img/logos/django-logo-negative.png" alt="Django">
+        <h1>{{ post.title }}</h1>
+    </div>
+    
+    <div class="article-container">
+        <div class="article-info">
+            <div class="article-author">{{ post.author.username }}</div>
+            <div class="article-created-date">{{ post.created_date }}</div>
+        </div>
+        
+        <div class="article-text">
+            {{ post.text|linebreaks }}
+        </div>
+        
+        <a href="{% url 'archive' %}" class="all-posts-link">← Все записи</a>
+    </div>
+</body>
+</html>
