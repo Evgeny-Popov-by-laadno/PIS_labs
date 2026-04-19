@@ -95,3 +95,16 @@ body.article {
     line-height: 1.6;
 }
 
+.create-link {
+    display: inline-block;
+    background: #3498db;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.create-link:hover {
+    background: #2980b9;
+}

@@ -1,4 +1,4 @@
-/* Стили для формы создания статьи */
+
 .content {
     max-width: 800px;
     margin: 50px auto;
@@ -54,41 +54,69 @@ input[type="submit"]:hover {
     margin-top: 15px;
 }
 
-.create-link {
-    display: inline-block;
-    background: #3498db;
-    color: white;
-    padding: 8px 15px;
-    border-radius: 5px;
-    text-decoration: none;
-    margin-left: 20px;
-}
-
-.create-link:hover {
-    background: #2980b9;
-}
 
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     background: #2c3e50;
     color: white;
     padding: 15px 30px;
     border-radius: 5px;
     margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
 
-.header h1 {
+.header-left h1 {
     margin: 0;
-    color: white;
+    font-size: 24px;
 }
 
-.header a {
+.header-right a, .header-right span {
+    margin-left: 15px;
     color: white;
     text-decoration: none;
 }
 
-.header a:hover {
+.header-right a:hover {
     text-decoration: underline;
 }
+
+.create-link {
+    background: #3498db;
+    padding: 5px 12px;
+    border-radius: 5px;
+}
+
+.create-link:hover {
+    background: #2980b9;
+    text-decoration: none !important;
+}
+
+.logout-link {
+    background: #e74c3c;
+    padding: 5px 12px;
+    border-radius: 5px;
+}
+
+.logout-link:hover {
+    background: #c0392b;
+}
+
+.login-link, .register-link {
+    padding: 5px 12px;
+    border-radius: 5px;
+}
+
+.login-link {
+    background: #2ecc71;
+}
+
+.register-link {
+    background: #f39c12;
+}
+
+.welcome {
+    font-style: italic;
+}
+

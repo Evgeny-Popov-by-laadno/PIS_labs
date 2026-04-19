@@ -2,6 +2,8 @@
 from django.shortcuts import render, redirect
 from django.http import Http404
 from .models import Article
+from django.contrib.auth.models import User
+from django.contrib.auth import login
 
 def archive(request):
     posts = Article.objects.all().order_by('-created_date')
@@ -41,3 +43,5 @@ def create_post(request):
     else:
 
         return render(request, 'create_post.html', {})
+    
+ 
