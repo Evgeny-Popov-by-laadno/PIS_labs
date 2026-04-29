@@ -37,11 +37,13 @@
                 <div class="article-created-date">{{ post.created_date }}</div>
             </div>
             <p class="article-text">{{ post.get_excerpt }}</p>
+            <button class="fold-button">свернуть</button>
         </div>
         {% empty %}
         <p>Статей пока нет.</p>
         {% endfor %}
     </div>
-    
+    <script src="{% static 'js/helloworld.js' %}"></script>
+    <script src="{% static 'js/fold-post.js' %}"></script>
 </body>
 </html>
