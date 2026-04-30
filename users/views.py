@@ -11,26 +11,25 @@ def register(request):
         
         errors = []
         
-        # Проверка на пустые поля
         if not username or not email or not password:
             errors.append('Все поля обязательны для заполнения')
         
-        # Проверка совпадения паролей
+    
         if password != password2:
             errors.append('Пароли не совпадают')
         
-        # Проверка уникальности имени пользователя
+    
         if User.objects.filter(username=username).exists():
             errors.append(f'Пользователь "{username}" уже существует')
         
         if not errors:
-            # Создание нового пользователя
+    
             user = User.objects.create_user(
                 username=username,
                 email=email,
                 password=password
             )
-            # Автоматический вход после регистрации
+
             login(request, user)
             return redirect('archive')
         
